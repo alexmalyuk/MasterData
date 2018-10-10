@@ -18,7 +18,6 @@ namespace MD.Data
         public Model1Container()
             : base("name=Model1Container")
         {
-
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
