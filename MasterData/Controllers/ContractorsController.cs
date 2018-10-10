@@ -1,0 +1,127 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using MD.Data;
+
+namespace MasterData.Controllers
+{
+    public class ContractorsController : Controller
+    {
+        private Model1Container db = new Model1Container();
+
+        // GET: Contractors
+        public ActionResult Index()
+        {
+            return View(db.ContractorSet.ToList());
+        }
+
+        // GET: Contractors/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Contractor contractor = db.ContractorSet.Find(id);
+            if (contractor == null)
+            {
+                return HttpNotFound();
+            }
+            return View(contractor);
+        }
+
+        // GET: Contractors/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Contractors/Create
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name")] Contractor contractor)
+        {
+            if (ModelState.IsValid)
+            {
+                db.ContractorSet.Add(contractor);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(contractor);
+        }
+
+        // GET: Contractors/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Contractor contractor = db.ContractorSet.Find(id);
+            if (contractor == null)
+            {
+                return HttpNotFound();
+            }
+            return View(contractor);
+        }
+
+        // POST: Contractors/Edit/5
+        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
+        // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name")] Contractor contractor)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(contractor).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(contractor);
+        }
+
+        // GET: Contractors/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Contractor contractor = db.ContractorSet.Find(id);
+            if (contractor == null)
+            {
+                return HttpNotFound();
+            }
+            return View(contractor);
+        }
+
+        // POST: Contractors/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Contractor contractor = db.ContractorSet.Find(id);
+            db.ContractorSet.Remove(contractor);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/05/2018 11:36:05
--- Generated from EDMX file: C:\Users\Malyuk\documents\visual studio 2015\Projects\MasterData\MD.Data\Model.edmx
+-- Date Created: 10/10/2018 11:38:16
+-- Generated from EDMX file: C:\Users\Malyuk\Documents\Visual Studio 2015\Projects\MasterData\MD.Data\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -22,6 +22,15 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[NodeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NodeSet];
+GO
+IF OBJECT_ID(N'[dbo].[DictionaryTypeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DictionaryTypeSet];
+GO
+IF OBJECT_ID(N'[dbo].[ContractorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ContractorSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -43,6 +52,20 @@ CREATE TABLE [dbo].[DictionaryTypeSet] (
 );
 GO
 
+-- Creating table 'ContractorSet'
+CREATE TABLE [dbo].[ContractorSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'ContractSet'
+CREATE TABLE [dbo].[ContractSet] (
+    [Id] uniqueidentifier  NOT NULL,
+    [Number] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -56,6 +79,18 @@ GO
 -- Creating primary key on [Id] in table 'DictionaryTypeSet'
 ALTER TABLE [dbo].[DictionaryTypeSet]
 ADD CONSTRAINT [PK_DictionaryTypeSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ContractorSet'
+ALTER TABLE [dbo].[ContractorSet]
+ADD CONSTRAINT [PK_ContractorSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ContractSet'
+ALTER TABLE [dbo].[ContractSet]
+ADD CONSTRAINT [PK_ContractSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
