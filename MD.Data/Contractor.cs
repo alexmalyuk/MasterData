@@ -14,7 +14,7 @@ namespace MD.Data
     
     public partial class Contractor
     {
-        public int Id { get; set; }
+        public System.Guid Id { get; set; }
         public string Name { get; set; }
     }
 }

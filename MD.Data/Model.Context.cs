@@ -26,7 +26,6 @@ namespace MD.Data
         }
     
         public virtual DbSet<Node> NodeSet { get; set; }
-        public virtual DbSet<DictionaryType> DictionaryTypeSet { get; set; }
         public virtual DbSet<Contractor> ContractorSet { get; set; }
         public virtual DbSet<Contract> ContractSet { get; set; }
     }

@@ -21,7 +21,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Contractors/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
@@ -50,6 +50,7 @@ namespace MasterData.Controllers
         {
             if (ModelState.IsValid)
             {
+                contractor.Id = Guid.NewGuid();
                 db.ContractorSet.Add(contractor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,7 +60,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Contractors/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
@@ -90,7 +91,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Contractors/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -107,7 +108,7 @@ namespace MasterData.Controllers
         // POST: Contractors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             Contractor contractor = db.ContractorSet.Find(id);
             db.ContractorSet.Remove(contractor);

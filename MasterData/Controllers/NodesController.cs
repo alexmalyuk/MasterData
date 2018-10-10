@@ -21,7 +21,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Nodes/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
@@ -46,10 +46,11 @@ namespace MasterData.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Connection,IsActive")] Node node)
+        public ActionResult Create([Bind(Include = "Id,Name,IsActive")] Node node)
         {
             if (ModelState.IsValid)
             {
+                node.Id = Guid.NewGuid();
                 db.NodeSet.Add(node);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,7 +60,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Nodes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
@@ -78,7 +79,7 @@ namespace MasterData.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Connection,IsActive")] Node node)
+        public ActionResult Edit([Bind(Include = "Id,Name,IsActive")] Node node)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +91,7 @@ namespace MasterData.Controllers
         }
 
         // GET: Nodes/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -107,7 +108,7 @@ namespace MasterData.Controllers
         // POST: Nodes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             Node node = db.NodeSet.Find(id);
             db.NodeSet.Remove(node);

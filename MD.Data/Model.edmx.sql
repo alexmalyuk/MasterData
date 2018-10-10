@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/10/2018 11:38:16
+-- Date Created: 10/10/2018 12:25:41
 -- Generated from EDMX file: C:\Users\Malyuk\Documents\Visual Studio 2015\Projects\MasterData\MD.Data\Model.edmx
 -- --------------------------------------------------
 
@@ -25,11 +25,11 @@ GO
 IF OBJECT_ID(N'[dbo].[NodeSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[NodeSet];
 GO
-IF OBJECT_ID(N'[dbo].[DictionaryTypeSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DictionaryTypeSet];
-GO
 IF OBJECT_ID(N'[dbo].[ContractorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ContractorSet];
+GO
+IF OBJECT_ID(N'[dbo].[ContractSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ContractSet];
 GO
 
 -- --------------------------------------------------
@@ -38,23 +38,15 @@ GO
 
 -- Creating table 'NodeSet'
 CREATE TABLE [dbo].[NodeSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(65)  NULL,
-    [Connection] nvarchar(max)  NULL,
+    [Id] uniqueidentifier  NOT NULL,
+    [Name] nvarchar(max)  NULL,
     [IsActive] bit  NOT NULL
-);
-GO
-
--- Creating table 'DictionaryTypeSet'
-CREATE TABLE [dbo].[DictionaryTypeSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(35)  NOT NULL
 );
 GO
 
 -- Creating table 'ContractorSet'
 CREATE TABLE [dbo].[ContractorSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [Id] uniqueidentifier  NOT NULL,
     [Name] nvarchar(max)  NOT NULL
 );
 GO
@@ -73,12 +65,6 @@ GO
 -- Creating primary key on [Id] in table 'NodeSet'
 ALTER TABLE [dbo].[NodeSet]
 ADD CONSTRAINT [PK_NodeSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'DictionaryTypeSet'
-ALTER TABLE [dbo].[DictionaryTypeSet]
-ADD CONSTRAINT [PK_DictionaryTypeSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

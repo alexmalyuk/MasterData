@@ -7,7 +7,6 @@
     <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="Model1StoreContainer">
     <EntitySet Name="NodeSet" EntityType="Model1.Store.NodeSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DictionaryTypeSet" EntityType="Model1.Store.DictionaryTypeSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ContractorSet" EntityType="Model1.Store.ContractorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ContractSet" EntityType="Model1.Store.ContractSet" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
@@ -15,30 +14,22 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="65" />
-    <Property Name="Connection" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
     <Property Name="IsActive" Type="bit" Nullable="false" DefaultValue="true" />
-  </EntityType>
-  <EntityType Name="DictionaryTypeSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="35" />
   </EntityType>
   <EntityType Name="ContractorSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ContractSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
 </Schema></edmx:StorageModels>
@@ -47,7 +38,6 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NodeSet" EntityType="Model1.Node" />
-          <EntitySet Name="DictionaryTypeSet" EntityType="Model1.DictionaryType" />
           <EntitySet Name="ContractorSet" EntityType="Model1.Contractor" />
           <EntitySet Name="ContractSet" EntityType="Model1.Contract" />
         </EntityContainer>
@@ -55,30 +45,22 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="true" MaxLength="65" Unicode="true" />
-          <Property Name="Connection" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" DefaultValue="True" />
-        </EntityType>
-        <EntityType Name="DictionaryType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="35" Unicode="true" />
         </EntityType>
         <EntityType Name="Contractor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="Name" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="Number" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
@@ -92,16 +74,7 @@
         <MappingFragment StoreEntitySet="NodeSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Connection" ColumnName="Connection" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DictionaryTypeSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.DictionaryType)">
-        <MappingFragment StoreEntitySet="DictionaryTypeSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
