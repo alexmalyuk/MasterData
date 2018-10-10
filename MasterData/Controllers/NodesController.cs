@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using MD.Data;
+using MD.Data.Models;
 
 namespace MasterData.Controllers
 {
     public class NodesController : Controller
     {
-        private Model1Container db = new Model1Container();
+        private MdContext db = new MdContext();
 
         // GET: Nodes
         public ActionResult Index()

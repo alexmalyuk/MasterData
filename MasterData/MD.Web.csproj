@@ -223,11 +223,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Nodes\Create.cshtml" />
-    <Content Include="Views\Nodes\Delete.cshtml" />
-    <Content Include="Views\Nodes\Details.cshtml" />
-    <Content Include="Views\Nodes\Edit.cshtml" />
-    <Content Include="Views\Nodes\Index.cshtml" />
     <Content Include="Views\Contractors\Create.cshtml" />
     <Content Include="Views\Contractors\Delete.cshtml" />
     <Content Include="Views\Contractors\Details.cshtml" />
@@ -238,6 +233,11 @@
     <Content Include="Views\Contracts\Details.cshtml" />
     <Content Include="Views\Contracts\Edit.cshtml" />
     <Content Include="Views\Contracts\Index.cshtml" />
+    <Content Include="Views\Nodes\Create.cshtml" />
+    <Content Include="Views\Nodes\Delete.cshtml" />
+    <Content Include="Views\Nodes\Details.cshtml" />
+    <Content Include="Views\Nodes\Edit.cshtml" />
+    <Content Include="Views\Nodes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MD.Data\MD.Data.csproj">

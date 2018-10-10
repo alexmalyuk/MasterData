@@ -13,9 +13,9 @@ namespace MD.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class MdContext : DbContext
     {
-        public Model1Container()
+        public MdContext()
             : base("name=Model1Container")
         {
         }
