@@ -12,6 +12,12 @@ namespace MD.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [Display(Name = "Номер")]
         public string Number { get; set; }
+
+        //[Required]
+        //[Display(Name = "Дата")]
+        //[DataType(DataType.Date)]
+        //public DateTime Date { get; set; }
     }
 }

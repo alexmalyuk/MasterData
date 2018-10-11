@@ -9,10 +9,13 @@ namespace MD.Data.Models
     [Table("NodeSet")]
     public partial class Node
     {
+        [Display(Name = "Идентификатор")]
         public Guid Id { get; set; }
 
+        [Display(Name = "Наименование")]
         public string Name { get; set; }
 
+        [Display(Name = "Активен")]
         public bool IsActive { get; set; }
     }
 }

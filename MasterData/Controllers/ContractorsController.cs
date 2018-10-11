@@ -47,7 +47,7 @@ namespace MasterData.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Contractor contractor)
+        public ActionResult Create([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO")] Contractor contractor)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace MasterData.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Contractor contractor)
+        public ActionResult Edit([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO")] Contractor contractor)
         {
             if (ModelState.IsValid)
             {

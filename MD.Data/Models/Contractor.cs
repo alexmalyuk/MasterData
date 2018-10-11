@@ -1,10 +1,8 @@
 namespace MD.Data.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("ContractorSet")]
     public partial class Contractor
@@ -12,8 +10,20 @@ namespace MD.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [Display(Name = "Наименование")]
         public string Name { get; set; }
+
+        [Display(Name = "Полное наименование")]
+        public string FullName { get; set; }
+
+        [Required]
+        [Display(Name = "Код ИНН")]
         public string INN { get; set; }
+
+        [Display(Name = "Код ОКПО")]
         public string OKPO { get; set; }
+
+        [Display(Name = "Юридический адрес")]
+        public string LegalAddress { get; set; }
     }
 }

@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201810111135562_INN_OKPO.Designer.cs">
       <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810111220556_ContractorAddressPropertyAdded.cs" />
+    <Compile Include="Migrations\201810111220556_ContractorAddressPropertyAdded.Designer.cs">
+      <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810111135562_INN_OKPO.resx">
       <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111220556_ContractorAddressPropertyAdded.resx">
+      <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
