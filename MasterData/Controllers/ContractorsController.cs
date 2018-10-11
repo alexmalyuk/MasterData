@@ -18,7 +18,7 @@ namespace MasterData.Controllers
         // GET: Contractors
         public ActionResult Index()
         {
-            return View(db.ContractorSet.ToList());
+            return View(db.ContractorSet.OrderBy(e=>e.Name).ToList());
         }
 
         // GET: Contractors/Details/5
