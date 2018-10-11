@@ -8,7 +8,7 @@ namespace MD.Data.Models
     public partial class MdContext : DbContext
     {
         public MdContext()
-            : base("name=MdContext")
+            : base("name=DefaultConnection")
         {
         }
 
