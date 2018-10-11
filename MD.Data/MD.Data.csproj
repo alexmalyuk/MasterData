@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201810111131543_InitialCreate.cs" />
+    <Compile Include="Migrations\201810111131543_InitialCreate.Designer.cs">
+      <DependentUpon>201810111131543_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810111135562_INN_OKPO.cs" />
+    <Compile Include="Migrations\201810111135562_INN_OKPO.Designer.cs">
+      <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\MdContext.cs" />
@@ -58,7 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +77,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810111131543_InitialCreate.resx">
+      <DependentUpon>201810111131543_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111135562_INN_OKPO.resx">
+      <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

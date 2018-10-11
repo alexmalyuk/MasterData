@@ -13,5 +13,7 @@ namespace MD.Data.Models
 
         [Required]
         public string Name { get; set; }
+        public string INN { get; set; }
+        public string OKPO { get; set; }
     }
 }
