@@ -15,6 +15,7 @@ namespace MD.Data.Models
         public virtual DbSet<Contractor> ContractorSet { get; set; }
         public virtual DbSet<Contract> ContractSet { get; set; }
         public virtual DbSet<Node> NodeSet { get; set; }
+        public virtual DbSet<Link> LinkSet { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

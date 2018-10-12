@@ -63,9 +63,14 @@
     <Compile Include="Migrations\201810111220556_ContractorAddressPropertyAdded.Designer.cs">
       <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810121534142_ContractorLink.cs" />
+    <Compile Include="Migrations\201810121534142_ContractorLink.Designer.cs">
+      <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Models\MdContext.cs" />
     <Compile Include="Models\Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810111220556_ContractorAddressPropertyAdded.resx">
       <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810121534142_ContractorLink.resx">
+      <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

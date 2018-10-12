@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MD.Data;
 using MD.Data.Models;
 
-namespace MasterData.Controllers
+namespace MasterData.Contollers
 {
     public class ContractorsController : Controller
     {

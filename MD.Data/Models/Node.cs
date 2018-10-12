@@ -17,5 +17,7 @@ namespace MD.Data.Models
 
         [Display(Name = "Активен")]
         public bool IsActive { get; set; }
+
+
     }
 }

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MD.Data.Models;
 
-namespace MasterData.Controllers
+namespace MasterData.Contollers_api
 {
     public class NodesController : Controller
     {

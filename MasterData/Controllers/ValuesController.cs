@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace MasterData.Controllers
+namespace MasterData.Contollers_api
 {
     public class ValuesController : ApiController
     {
