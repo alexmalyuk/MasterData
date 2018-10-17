@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201810161515263_Links_Alias.Designer.cs">
       <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810171233483_Alias.cs" />
+    <Compile Include="Migrations\201810171233483_Alias.Designer.cs">
+      <DependentUpon>201810171233483_Alias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810161515263_Links_Alias.resx">
       <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810171233483_Alias.resx">
+      <DependentUpon>201810171233483_Alias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

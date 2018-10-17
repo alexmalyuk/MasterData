@@ -13,19 +13,7 @@ namespace MasterData.Contollers
         {
             ViewBag.Title = "Home Page";
 
-            Log.For(this).Debug("Debug - HomeController-Index()");
-            Log.For(this).Error("Error - HomeController-Index()");
-
-            try
-            {
-                object d = null;
-                d.ToString();
-            }
-
-            catch (Exception ex)
-            {
-                Log.For(this).Error("Err..", ex);
-            }
+            //Log.For(this).Error("Err..", ex);
 
             return View();
         }

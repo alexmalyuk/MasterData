@@ -18,9 +18,10 @@ namespace MD.Data.Models
         [Display(Name = "Активен")]
         public bool IsActive { get; set; }
 
-        [Required]
         [Display(Name = "Алиас")]
-        [Range(3, 5)]
+        [Required]
+        [StringLength(10, MinimumLength = 2)]
+        [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Допускаются только латинские символы и цифры")]
         public string Alias { get; set; }
 
         public override string ToString()
