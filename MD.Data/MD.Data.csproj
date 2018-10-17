@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201810121534142_ContractorLink.Designer.cs">
       <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810161515263_Links_Alias.cs" />
+    <Compile Include="Migrations\201810161515263_Links_Alias.Designer.cs">
+      <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -79,6 +83,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810121534142_ContractorLink.resx">
       <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161515263_Links_Alias.resx">
+      <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MD.Data;
 using MD.Data.Models;
 
-namespace MasterData.Contollers_api
+namespace MasterData.Contollers
 {
     public class ContractsController : Controller
     {

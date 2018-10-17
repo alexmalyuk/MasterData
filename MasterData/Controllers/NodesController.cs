@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MD.Data.Models;
 
-namespace MasterData.Contollers_api
+namespace MasterData.Contollers
 {
     public class NodesController : Controller
     {
@@ -46,7 +46,7 @@ namespace MasterData.Contollers_api
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,IsActive")] Node node)
+        public ActionResult Create([Bind(Include = "Id,Name,IsActive,Alias")] Node node)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace MasterData.Contollers_api
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,IsActive")] Node node)
+        public ActionResult Edit([Bind(Include = "Id,Name,IsActive,Alias")] Node node)
         {
             if (ModelState.IsValid)
             {

@@ -9,26 +9,45 @@ namespace MD.Data.Models
 {
     public class Link
     {
+        private MdContext db = new MdContext();
+
         public Guid Id { get; set; }
 
+        [Display(Name = "Дата добавления")]
         public DateTime Date { get; set; }
 
         [Required]
-        [Display(Name = "Contractor Id")]
+        [Display(Name = "Контрагент Id")]
         public Guid ContractorId { get; set; }
 
-        [Display(Name = "Contractor")]
-
-        public Contractor Contractor { get; set; }
+        [Display(Name = "Контрагент")]
+        public Contractor Contractor
+        {
+            get
+            {
+                var query = db.ContractorSet.Where(c => c.Id == ContractorId).FirstOrDefault();
+                return query;
+            }
+            set { }
+        }
 
         [Required]
-        [Display(Name = "Native Id")]
+        [Display(Name = "Id в базе узла")]
         public string NativeId { get; set; }
 
         [Required]
-        [Display(Name = "Node Id")]
+        [Display(Name = "Узел Id")]
         public Guid NodeId { get; set; }
 
-        public Node Node { get; set; }
+        [Display(Name = "Узел")]
+        public Node Node
+        {
+            get
+            {
+                var query = db.NodeSet.Where(c => c.Id == NodeId).FirstOrDefault();
+                return query;
+            }
+    set { }
+        }
     }
 }

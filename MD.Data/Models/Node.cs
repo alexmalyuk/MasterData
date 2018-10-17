@@ -6,7 +6,7 @@ namespace MD.Data.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("NodeSet")]
+    //[Table("NodeSet")]
     public partial class Node
     {
         [Display(Name = "Идентификатор")]
@@ -18,6 +18,14 @@ namespace MD.Data.Models
         [Display(Name = "Активен")]
         public bool IsActive { get; set; }
 
+        [Required]
+        [Display(Name = "Алиас")]
+        [Range(3, 5)]
+        public string Alias { get; set; }
 
+        public override string ToString()
+        {
+            return Name + (IsActive ? " (Active)" : " (Not active)") ;
+        }
     }
 }

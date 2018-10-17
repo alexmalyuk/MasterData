@@ -25,5 +25,10 @@ namespace MD.Data.Models
 
         [Display(Name = "ёридический адрес")]
         public string LegalAddress { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

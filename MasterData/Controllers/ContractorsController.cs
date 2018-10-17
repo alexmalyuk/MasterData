@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MD.Data.Models;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MD.Data;
-using MD.Data.Models;
 
 namespace MasterData.Contollers
 {

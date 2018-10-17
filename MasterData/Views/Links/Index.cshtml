@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MD.Data.Models.Node>
+﻿@model IEnumerable<MD.Data.Models.Link>
 
 @{
     ViewBag.Title = "Index";
@@ -12,13 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Contractor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Alias)
+            @Html.DisplayNameFor(model => model.Node)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IsActive)
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NativeId)
         </th>
         <th></th>
     </tr>
@@ -26,13 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Contractor.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Alias)
+            @Html.DisplayFor(modelItem => item.Node.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NativeId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
