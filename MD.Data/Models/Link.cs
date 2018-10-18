@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MD.Data.Models
 {
@@ -21,15 +18,7 @@ namespace MD.Data.Models
         public Guid ContractorId { get; set; }
 
         [Display(Name = "Контрагент")]
-        public Contractor Contractor
-        {
-            get
-            {
-                var query = db.ContractorSet.Where(c => c.Id == ContractorId).FirstOrDefault();
-                return query;
-            }
-            set { }
-        }
+        public Contractor Contractor { get; set; }
 
         [Required]
         [Display(Name = "Id в базе узла")]
@@ -40,14 +29,12 @@ namespace MD.Data.Models
         public Guid NodeId { get; set; }
 
         [Display(Name = "Узел")]
-        public Node Node
+        public Node Node { get; set; }
+
+        public static bool Exists(Guid NodeId, string NativeId)
         {
-            get
-            {
-                var query = db.NodeSet.Where(c => c.Id == NodeId).FirstOrDefault();
-                return query;
-            }
-    set { }
+            MdContext db = new MdContext();
+            return db.LinkSet.Where(a => a.NativeId == NativeId && a.NodeId == NodeId).Any();
         }
     }
 }

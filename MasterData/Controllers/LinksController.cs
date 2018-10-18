@@ -18,8 +18,8 @@ namespace MasterData.Controllers
         // GET: Links
         public async Task<ActionResult> Index()
         {
-            //var linkSet = db.LinkSet.Include(l => l.Contractor).Include(l => l.Node);
-            return View(await db.LinkSet.ToListAsync());
+            var linkSet = db.LinkSet.Include(l => l.Contractor).Include(l => l.Node);
+            return View(await linkSet.ToListAsync());
         }
 
         // GET: Links/Details/5

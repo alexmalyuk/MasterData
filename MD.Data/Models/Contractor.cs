@@ -3,6 +3,7 @@ namespace MD.Data.Models
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
 
     [Table("ContractorSet")]
     public partial class Contractor
@@ -29,6 +30,12 @@ namespace MD.Data.Models
         public override string ToString()
         {
             return Name;
+        }
+
+        public static Contractor FindByINN(string INN)
+        {
+            MdContext db = new MdContext();
+            return db.ContractorSet.Where(a => a.INN == INN).FirstOrDefault();
         }
     }
 }

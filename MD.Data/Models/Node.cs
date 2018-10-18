@@ -1,10 +1,8 @@
 namespace MD.Data.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Linq;
 
     //[Table("NodeSet")]
     public partial class Node
@@ -27,6 +25,12 @@ namespace MD.Data.Models
         public override string ToString()
         {
             return Name + (IsActive ? " (Active)" : " (Not active)") ;
+        }
+
+        public static Node FindByAlias(string Alias)
+        {
+            MdContext db = new MdContext();
+            return db.NodeSet.Where(a => a.Alias == Alias).FirstOrDefault();
         }
     }
 }
