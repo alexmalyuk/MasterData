@@ -35,6 +35,7 @@ namespace MasterData.Contollers_api
         {
             try
             {
+                contractorInfo.NodeAlias = NodeAlias;
                 contractorInfo.Save();
             }
             catch (Exception ex)
