@@ -40,7 +40,7 @@ namespace MasterData.Contollers_api
             }
             catch (Exception ex)
             {
-                Log.For(this).Error("[HttpPost][Route(\"api/ContractorInfo/{NodeAlias}\")]", ex);
+                Log.For(this).Error("api/ContractorInfo/"+NodeAlias, ex);
             }
 
             return true;

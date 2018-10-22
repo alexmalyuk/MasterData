@@ -10,19 +10,24 @@ namespace MD.Data.Models
     {
         public Guid Id { get; set; }
 
-        [Required]
+        [Required, Index, MaxLength(100)]
         [Display(Name = "Наименование")]
         public string Name { get; set; }
 
         [Display(Name = "Полное наименование")]
         public string FullName { get; set; }
 
-        [Required]
+        [Required, Index, MaxLength(12)]
         [Display(Name = "Код ИНН")]
         public string INN { get; set; }
 
+        [Index, MaxLength(10)]
         [Display(Name = "Код ОКПО")]
         public string OKPO { get; set; }
+
+        [Index, MaxLength(10)]
+        [Display(Name = "Номер свидетельства")]
+        public string VATCertificateNumber { get; set; }
 
         [Display(Name = "Юридический адрес")]
         public string LegalAddress { get; set; }

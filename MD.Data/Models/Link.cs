@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace MD.Data.Models
@@ -13,22 +14,22 @@ namespace MD.Data.Models
         [Display(Name = "Дата добавления")]
         public DateTime Date { get; set; }
 
-        [Required]
+        [Required, Index]
         [Display(Name = "Контрагент Id")]
         public Guid ContractorId { get; set; }
 
-        [Display(Name = "Контрагент")]
+        //[Display(Name = "Контрагент")]
         public Contractor Contractor { get; set; }
 
-        [Required]
+        [Required, Index, MaxLength(36)]
         [Display(Name = "Id в базе узла")]
         public string NativeId { get; set; }
 
-        [Required]
+        [Required, Index]
         [Display(Name = "Узел Id")]
         public Guid NodeId { get; set; }
 
-        [Display(Name = "Узел")]
+        //[Display(Name = "Узел")]
         public Node Node { get; set; }
 
         public static bool Exists(Guid NodeId, string NativeId)
