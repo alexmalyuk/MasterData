@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201810221506210_MaxLengthsAndIndexes.Designer.cs">
       <DependentUpon>201810221506210_MaxLengthsAndIndexes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810221542162_DatabaseGeneratedIdentity.cs" />
+    <Compile Include="Migrations\201810221542162_DatabaseGeneratedIdentity.Designer.cs">
+      <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810221506210_MaxLengthsAndIndexes.resx">
       <DependentUpon>201810221506210_MaxLengthsAndIndexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810221542162_DatabaseGeneratedIdentity.resx">
+      <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

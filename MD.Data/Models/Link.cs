@@ -9,6 +9,7 @@ namespace MD.Data.Models
     {
         private MdContext db = new MdContext();
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Display(Name = "Дата добавления")]
