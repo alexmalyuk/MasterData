@@ -4,6 +4,7 @@ namespace MD.Data.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Configuration;
 
     public partial class MdContext : DbContext
     {
@@ -19,6 +20,12 @@ namespace MD.Data.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Configurations.Add(new NodeConfig());
+            modelBuilder.Configurations.Add(new ContractorConfig());
+            modelBuilder.Configurations.Add(new LinkConfig());
         }
+
     }
 }

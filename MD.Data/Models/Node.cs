@@ -1,27 +1,25 @@
 namespace MD.Data.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    //[Table("NodeSet")]
     public partial class Node
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        [Required, StringLength(50)]
         [Display(Name = "Наименование")]
         public string Name { get; set; }
 
         [Display(Name = "Активен")]
         public bool IsActive { get; set; }
 
-        [Required, StringLength(10, MinimumLength = 2)]
-        [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Допускаются только латинские символы и цифры")]
         [Display(Name = "Алиас")]
+        [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Допускаются только латинские символы и цифры")]
         public string Alias { get; set; }
+
+        public virtual List<Link> Links { get; set; }
 
         public override string ToString()
         {

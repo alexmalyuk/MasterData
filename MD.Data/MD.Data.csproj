@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ContractorConfig.cs" />
+    <Compile Include="Configuration\LinkConfig.cs" />
+    <Compile Include="Configuration\NodeConfig.cs" />
     <Compile Include="Migrations\201810111131543_InitialCreate.cs" />
     <Compile Include="Migrations\201810111131543_InitialCreate.Designer.cs">
       <DependentUpon>201810111131543_InitialCreate.cs</DependentUpon>
@@ -99,6 +102,22 @@
     <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.cs" />
     <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.Designer.cs">
       <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810230824186_InverseProperty_Node_Links.cs" />
+    <Compile Include="Migrations\201810230824186_InverseProperty_Node_Links.Designer.cs">
+      <DependentUpon>201810230824186_InverseProperty_Node_Links.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810230845225_Node_Links_NavProp.cs" />
+    <Compile Include="Migrations\201810230845225_Node_Links_NavProp.Designer.cs">
+      <DependentUpon>201810230845225_Node_Links_NavProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231242331_FluentAPI.cs" />
+    <Compile Include="Migrations\201810231242331_FluentAPI.Designer.cs">
+      <DependentUpon>201810231242331_FluentAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810231512587_Cascade.cs" />
+    <Compile Include="Migrations\201810231512587_Cascade.Designer.cs">
+      <DependentUpon>201810231512587_Cascade.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
@@ -153,6 +172,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810230806204_FixDateTimeDefault1.resx">
       <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230824186_InverseProperty_Node_Links.resx">
+      <DependentUpon>201810230824186_InverseProperty_Node_Links.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230845225_Node_Links_NavProp.resx">
+      <DependentUpon>201810230845225_Node_Links_NavProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231242331_FluentAPI.resx">
+      <DependentUpon>201810231242331_FluentAPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231512587_Cascade.resx">
+      <DependentUpon>201810231512587_Cascade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
