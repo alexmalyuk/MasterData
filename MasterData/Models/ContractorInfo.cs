@@ -45,7 +45,7 @@ namespace MasterData.Models
             if (contractor == null)
             {
                 contractor = new Contractor();
-                contractor.Id = Guid.NewGuid();
+                //contractor.Id = Guid.NewGuid();
                 db.ContractorSet.Add(contractor);
             }
             else
@@ -64,11 +64,11 @@ namespace MasterData.Models
             if (!Link.Exists(node.Id, this.NativeId))
             {
                 Link link = new Link();
-                link.Id = Guid.NewGuid();
+                //link.Id = Guid.NewGuid();
                 link.NodeId = node.Id;
                 link.NativeId = this.NativeId;
-                link.ContractorId = contractor.Id;
-                link.Date = DateTime.Now;
+                link.Contractor = contractor;
+                //link.Date = DateTime.Now;
                 db.LinkSet.Add(link);
             }
 

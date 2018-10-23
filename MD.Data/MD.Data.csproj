@@ -84,6 +84,22 @@
     <Compile Include="Migrations\201810221542162_DatabaseGeneratedIdentity.Designer.cs">
       <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810230636159_KeysDatabaseGenerated.cs" />
+    <Compile Include="Migrations\201810230636159_KeysDatabaseGenerated.Designer.cs">
+      <DependentUpon>201810230636159_KeysDatabaseGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.cs" />
+    <Compile Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.Designer.cs">
+      <DependentUpon>201810230658189_KeysDatabaseGenerated_Node.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810230803454_FixDateTimeDefault.cs" />
+    <Compile Include="Migrations\201810230803454_FixDateTimeDefault.Designer.cs">
+      <DependentUpon>201810230803454_FixDateTimeDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.cs" />
+    <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.Designer.cs">
+      <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -125,6 +141,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810221542162_DatabaseGeneratedIdentity.resx">
       <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230636159_KeysDatabaseGenerated.resx">
+      <DependentUpon>201810230636159_KeysDatabaseGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.resx">
+      <DependentUpon>201810230658189_KeysDatabaseGenerated_Node.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230803454_FixDateTimeDefault.resx">
+      <DependentUpon>201810230803454_FixDateTimeDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810230806204_FixDateTimeDefault1.resx">
+      <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

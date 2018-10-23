@@ -51,7 +51,7 @@ namespace MasterData.Contollers
         {
             if (ModelState.IsValid)
             {
-                contract.Id = Guid.NewGuid();
+                //contract.Id = Guid.NewGuid();
                 db.ContractSet.Add(contract);
                 db.SaveChanges();
                 return RedirectToAction("Index");

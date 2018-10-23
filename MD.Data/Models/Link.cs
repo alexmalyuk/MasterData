@@ -7,31 +7,30 @@ namespace MD.Data.Models
 {
     public class Link
     {
-        private MdContext db = new MdContext();
+        //private MdContext db = new MdContext();
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        [Display(Name = "Дата добавления")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Display(Name = "Дата добавления/изменения")]
         public DateTime Date { get; set; }
 
         [Required, Index]
-        [Display(Name = "Контрагент Id")]
+        [Display(Name = "Контрагент")]
         public Guid ContractorId { get; set; }
 
-        //[Display(Name = "Контрагент")]
-        public Contractor Contractor { get; set; }
+        [Required, Index]
+        [Display(Name = "Узел")]
+        public Guid NodeId { get; set; }
 
         [Required, Index, MaxLength(36)]
         [Display(Name = "Id в базе узла")]
         public string NativeId { get; set; }
 
-        [Required, Index]
-        [Display(Name = "Узел Id")]
-        public Guid NodeId { get; set; }
 
-        //[Display(Name = "Узел")]
         public Node Node { get; set; }
+        public Contractor Contractor { get; set; }
 
         public static bool Exists(Guid NodeId, string NativeId)
         {

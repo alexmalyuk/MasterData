@@ -9,6 +9,7 @@ namespace MD.Data.Models
     [Table("ContractSet")]
     public partial class Contract
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]

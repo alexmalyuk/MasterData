@@ -54,10 +54,10 @@ namespace MasterData.Controllers
         {
             if (ModelState.IsValid)
             {
-                link.Id = Guid.NewGuid();
-                link.Date = DateTime.Now;
-                db.Entry(link.Contractor).State = EntityState.Unchanged;
-                db.Entry(link.Node).State = EntityState.Unchanged;
+                //link.Id = Guid.NewGuid();
+                //link.Date = DateTime.Now;
+                //db.Entry(link.Contractor).State = EntityState.Unchanged;
+                //db.Entry(link.Node).State = EntityState.Unchanged;
                 db.LinkSet.Add(link);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -94,7 +94,7 @@ namespace MasterData.Controllers
         {
             if (ModelState.IsValid)
             {
-                link.Date = DateTime.Now;
+                //link.Date = DateTime.Now;
                 db.Entry(link).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

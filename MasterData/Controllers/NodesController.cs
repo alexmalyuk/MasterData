@@ -50,7 +50,7 @@ namespace MasterData.Contollers
         {
             if (ModelState.IsValid)
             {
-                node.Id = Guid.NewGuid();
+                //node.Id = Guid.NewGuid();
                 db.NodeSet.Add(node);
                 db.SaveChanges();
                 return RedirectToAction("Index");

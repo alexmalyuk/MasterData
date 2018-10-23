@@ -8,7 +8,7 @@ namespace MD.Data.Models
     [Table("ContractorSet")]
     public partial class Contractor
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required, Index, MaxLength(100)]
