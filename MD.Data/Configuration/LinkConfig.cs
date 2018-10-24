@@ -14,17 +14,8 @@ namespace MD.Data.Configuration
     {
         public LinkConfig()
         {
-            HasIndex(p => p.NativeId);
-            HasIndex(p => p.NodeId);
-            HasIndex(p => p.ContractorId);
-
             Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            //.HasColumnAnnotation("defaultValueSql", "NEWID()");
-            //defaultValueSql: "GETDATE()"
-            Property(p => p.Date)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-                //.HasColumnAnnotation("defaultValueSql", "GETDATE()");
 
             Property(p => p.ContractorId)
                 .IsRequired();
@@ -35,6 +26,10 @@ namespace MD.Data.Configuration
             Property(p => p.NativeId)
                 .IsRequired()
                 .HasMaxLength(36);
+
+            HasIndex(p => p.NativeId);
+            HasIndex(p => p.NodeId);
+            HasIndex(p => p.ContractorId);
 
             HasRequired(p => p.Node).WithMany(p => p.Links).WillCascadeOnDelete(false);
             HasRequired(p => p.Contractor).WithMany(p => p.Links).WillCascadeOnDelete(false);

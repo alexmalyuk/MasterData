@@ -18,17 +18,20 @@ namespace MD.Data.Models
         [Display(Name = "Узел")]
         public Guid NodeId { get; set; }
 
-        [Display(Name = "Id в базе узла")]
+        [Display(Name = "Id в своей базе")]
         public string NativeId { get; set; }
 
 
         public virtual Node Node { get; set; }
         public virtual Contractor Contractor { get; set; }
 
+
         public static bool Exists(Guid NodeId, string NativeId)
         {
-            MdContext db = new MdContext();
-            return db.LinkSet.Where(a => a.NativeId == NativeId && a.NodeId == NodeId).Any();
+            using (MdContext db = new MdContext())
+            {
+                return db.Links.Where(a => a.NativeId == NativeId && a.NodeId == NodeId).Any();
+            }
         }
     }
 }

@@ -33,6 +33,10 @@ namespace MasterData.Contollers_api
         [Route("api/ContractorInfo/{NodeAlias}")]
         public bool Post(string NodeAlias, [FromBody]ContractorInfo contractorInfo)
         {
+            //Node node = Node.FindByAlias(this.NodeAlias);
+            //if (node == null)
+            //    return <404>;
+
             try
             {
                 contractorInfo.NodeAlias = NodeAlias;
@@ -40,7 +44,8 @@ namespace MasterData.Contollers_api
             }
             catch (Exception ex)
             {
-                Log.For(this).Error("api/ContractorInfo/"+NodeAlias, ex);
+                //Log.For(this).Error("POST: api/ContractorInfo/"+NodeAlias, ex);
+                throw ex;
             }
 
             return true;

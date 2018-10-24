@@ -13,12 +13,6 @@ namespace MD.Data.Configuration
     {
         public ContractorConfig()
         {
-            ToTable("Contractors");
-
-            HasIndex(p => p.Name);
-            HasIndex(p => p.INN);
-            HasIndex(p => p.OKPO);
-            HasIndex(p => p.VATCertificateNumber);
 
             Property(p => p.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
@@ -36,6 +30,11 @@ namespace MD.Data.Configuration
 
             Property(p => p.VATCertificateNumber)
                 .HasMaxLength(10);
+
+            HasIndex(p => p.Name);
+            HasIndex(p => p.INN);
+            HasIndex(p => p.OKPO);
+            HasIndex(p => p.VATCertificateNumber);
 
         }
     }

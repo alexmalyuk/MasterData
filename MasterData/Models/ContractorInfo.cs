@@ -28,9 +28,6 @@ namespace MasterData.Models
 
         public void Save()
         {
-            Node node = Node.FindByAlias(this.NodeAlias);
-            if (node == null)
-                return;
             
             // примерный алгоритм при сохранении контрагента
             //
@@ -38,41 +35,40 @@ namespace MasterData.Models
             //- если не нашли - создать
             //- дописать запись в Link
 
-            MdContext db = new MdContext();
-
-            // check the Contractor
-            Contractor contractor = Contractor.FindByINN(this.INN);
-            if (contractor == null)
+            using(MdContext db = new MdContext())
             {
-                contractor = new Contractor();
-                //contractor.Id = Guid.NewGuid();
-                db.Contractors.Add(contractor);
-            }
-            else
-            {
-                db.Entry(contractor).State = EntityState.Modified;
-            }
-            contractor.FullName = this.FullName;
-            contractor.INN = this.INN;
-            contractor.LegalAddress = this.LegalAddress;
-            contractor.Name = this.Name;
-            contractor.OKPO = this.OKPO;
+                Node node = Node.FindByAlias(this.NodeAlias);
+                if (node == null)
+                    return ;
 
-            db.SaveChanges();
+                // check the Contractor
+                Contractor contractor = Contractor.FindByINN(this.INN);
+                if (contractor == null)
+                {
+                    contractor = new Contractor();
+                    db.Contractors.Add(contractor);
+                }
+                contractor.FullName = this.FullName;
+                contractor.INN = this.INN;
+                contractor.LegalAddress = this.LegalAddress;
+                contractor.Name = this.Name;
+                contractor.OKPO = this.OKPO;
 
-            // check the Link
-            if (!Link.Exists(node.Id, this.NativeId))
-            {
-                Link link = new Link();
-                //link.Id = Guid.NewGuid();
-                link.NodeId = node.Id;
-                link.NativeId = this.NativeId;
-                link.Contractor = contractor;
-                //link.Date = DateTime.Now;
-                db.LinkSet.Add(link);
+                db.SaveChanges();
+
+                // check the Link
+                if (!Link.Exists(node.Id, this.NativeId))
+                {
+                    Link link = new Link();
+                    link.NodeId = node.Id;
+                    link.NativeId = this.NativeId;
+                    link.ContractorId = contractor.Id;
+                    link.Date = DateTime.Now;
+                    db.Links.Add(link);
+                }
+
+                db.SaveChanges();
             }
-
-            db.SaveChanges();
         }
 
         public static ContractorInfo GetByNativeId(string NativeId, string NodeAlias)
@@ -83,7 +79,7 @@ namespace MasterData.Models
             if (node == null)
                 return null;
 
-            var q = db.LinkSet.Where(a => a.NativeId == NativeId && a.NodeId == node.Id).Join(
+            var q = db.Links.Where(a => a.NativeId == NativeId && a.NodeId == node.Id).Join(
                 db.Contractors,
                 l => l.Id,
                 c => c.Id,

@@ -52,72 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ContractConfig.cs" />
     <Compile Include="Configuration\ContractorConfig.cs" />
     <Compile Include="Configuration\LinkConfig.cs" />
     <Compile Include="Configuration\NodeConfig.cs" />
-    <Compile Include="Migrations\201810111131543_InitialCreate.cs" />
-    <Compile Include="Migrations\201810111131543_InitialCreate.Designer.cs">
-      <DependentUpon>201810111131543_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810111135562_INN_OKPO.cs" />
-    <Compile Include="Migrations\201810111135562_INN_OKPO.Designer.cs">
-      <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810111220556_ContractorAddressPropertyAdded.cs" />
-    <Compile Include="Migrations\201810111220556_ContractorAddressPropertyAdded.Designer.cs">
-      <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810121534142_ContractorLink.cs" />
-    <Compile Include="Migrations\201810121534142_ContractorLink.Designer.cs">
-      <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810161515263_Links_Alias.cs" />
-    <Compile Include="Migrations\201810161515263_Links_Alias.Designer.cs">
-      <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810171233483_Alias.cs" />
-    <Compile Include="Migrations\201810171233483_Alias.Designer.cs">
-      <DependentUpon>201810171233483_Alias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810221506210_MaxLengthsAndIndexes.cs" />
-    <Compile Include="Migrations\201810221506210_MaxLengthsAndIndexes.Designer.cs">
-      <DependentUpon>201810221506210_MaxLengthsAndIndexes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810221542162_DatabaseGeneratedIdentity.cs" />
-    <Compile Include="Migrations\201810221542162_DatabaseGeneratedIdentity.Designer.cs">
-      <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230636159_KeysDatabaseGenerated.cs" />
-    <Compile Include="Migrations\201810230636159_KeysDatabaseGenerated.Designer.cs">
-      <DependentUpon>201810230636159_KeysDatabaseGenerated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.cs" />
-    <Compile Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.Designer.cs">
-      <DependentUpon>201810230658189_KeysDatabaseGenerated_Node.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230803454_FixDateTimeDefault.cs" />
-    <Compile Include="Migrations\201810230803454_FixDateTimeDefault.Designer.cs">
-      <DependentUpon>201810230803454_FixDateTimeDefault.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.cs" />
-    <Compile Include="Migrations\201810230806204_FixDateTimeDefault1.Designer.cs">
-      <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230824186_InverseProperty_Node_Links.cs" />
-    <Compile Include="Migrations\201810230824186_InverseProperty_Node_Links.Designer.cs">
-      <DependentUpon>201810230824186_InverseProperty_Node_Links.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810230845225_Node_Links_NavProp.cs" />
-    <Compile Include="Migrations\201810230845225_Node_Links_NavProp.Designer.cs">
-      <DependentUpon>201810230845225_Node_Links_NavProp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810231242331_FluentAPI.cs" />
-    <Compile Include="Migrations\201810231242331_FluentAPI.Designer.cs">
-      <DependentUpon>201810231242331_FluentAPI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810231512587_Cascade.cs" />
-    <Compile Include="Migrations\201810231512587_Cascade.Designer.cs">
-      <DependentUpon>201810231512587_Cascade.cs</DependentUpon>
+    <Compile Include="Migrations\201810241130073_InitialCreate.cs" />
+    <Compile Include="Migrations\201810241130073_InitialCreate.Designer.cs">
+      <DependentUpon>201810241130073_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contractor.cs" />
@@ -137,53 +78,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810111131543_InitialCreate.resx">
-      <DependentUpon>201810111131543_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810111135562_INN_OKPO.resx">
-      <DependentUpon>201810111135562_INN_OKPO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810111220556_ContractorAddressPropertyAdded.resx">
-      <DependentUpon>201810111220556_ContractorAddressPropertyAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810121534142_ContractorLink.resx">
-      <DependentUpon>201810121534142_ContractorLink.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810161515263_Links_Alias.resx">
-      <DependentUpon>201810161515263_Links_Alias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810171233483_Alias.resx">
-      <DependentUpon>201810171233483_Alias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810221506210_MaxLengthsAndIndexes.resx">
-      <DependentUpon>201810221506210_MaxLengthsAndIndexes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810221542162_DatabaseGeneratedIdentity.resx">
-      <DependentUpon>201810221542162_DatabaseGeneratedIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230636159_KeysDatabaseGenerated.resx">
-      <DependentUpon>201810230636159_KeysDatabaseGenerated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230658189_KeysDatabaseGenerated_Node.resx">
-      <DependentUpon>201810230658189_KeysDatabaseGenerated_Node.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230803454_FixDateTimeDefault.resx">
-      <DependentUpon>201810230803454_FixDateTimeDefault.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230806204_FixDateTimeDefault1.resx">
-      <DependentUpon>201810230806204_FixDateTimeDefault1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230824186_InverseProperty_Node_Links.resx">
-      <DependentUpon>201810230824186_InverseProperty_Node_Links.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810230845225_Node_Links_NavProp.resx">
-      <DependentUpon>201810230845225_Node_Links_NavProp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810231242331_FluentAPI.resx">
-      <DependentUpon>201810231242331_FluentAPI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810231512587_Cascade.resx">
-      <DependentUpon>201810231512587_Cascade.cs</DependentUpon>
+    <ProjectReference Include="..\Common\MD.Common.csproj">
+      <Project>{87e880b1-53eb-4d33-a80f-b1a91ea3242c}</Project>
+      <Name>MD.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810241130073_InitialCreate.resx">
+      <DependentUpon>201810241130073_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

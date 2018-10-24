@@ -7,13 +7,13 @@ namespace MD.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class FluentAPI : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FluentAPI));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201810231242331_FluentAPI"; }
+            get { return "201810241130073_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

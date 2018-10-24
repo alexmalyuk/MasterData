@@ -18,7 +18,7 @@ namespace MasterData.Controllers
         // GET: Links
         public async Task<ActionResult> Index()
         {
-            var linkSet = db.LinkSet.Include(l => l.Contractor).Include(l => l.Node);
+            var linkSet = db.Links.Include(l => l.Contractor).Include(l => l.Node);
             return View(await linkSet.ToListAsync());
         }
 
@@ -29,7 +29,7 @@ namespace MasterData.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Link link = await db.LinkSet.FindAsync(id);
+            Link link = await db.Links.FindAsync(id);
             if (link == null)
             {
                 return HttpNotFound();
@@ -41,7 +41,7 @@ namespace MasterData.Controllers
         public ActionResult Create()
         {
             ViewBag.ContractorId = new SelectList(db.Contractors.OrderBy(c => c.Name), "Id", "Name");
-            ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name");
+            ViewBag.NodeId = new SelectList(db.Nodes, "Id", "Name");
             return View();
         }
 
@@ -58,13 +58,13 @@ namespace MasterData.Controllers
                 //link.Date = DateTime.Now;
                 //db.Entry(link.Contractor).State = EntityState.Unchanged;
                 //db.Entry(link.Node).State = EntityState.Unchanged;
-                db.LinkSet.Add(link);
+                db.Links.Add(link);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ContractorId = new SelectList(db.Contractors, "Id", "Name", link.ContractorId);
-            ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
+            ViewBag.NodeId = new SelectList(db.Nodes, "Id", "Name", link.NodeId);
             return View(link);
         }
 
@@ -75,13 +75,13 @@ namespace MasterData.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Link link = await db.LinkSet.FindAsync(id);
+            Link link = await db.Links.FindAsync(id);
             if (link == null)
             {
                 return HttpNotFound();
             }
             ViewBag.ContractorId = new SelectList(db.Contractors.OrderBy(c => c.Name), "Id", "Name", link.ContractorId);
-            ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
+            ViewBag.NodeId = new SelectList(db.Nodes, "Id", "Name", link.NodeId);
             return View(link);
         }
 
@@ -100,7 +100,7 @@ namespace MasterData.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ContractorId = new SelectList(db.Contractors, "Id", "Name", link.ContractorId);
-            ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
+            ViewBag.NodeId = new SelectList(db.Nodes, "Id", "Name", link.NodeId);
             return View(link);
         }
 
@@ -111,7 +111,7 @@ namespace MasterData.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Link link = await db.LinkSet.FindAsync(id);
+            Link link = await db.Links.FindAsync(id);
             if (link == null)
             {
                 return HttpNotFound();
@@ -124,8 +124,8 @@ namespace MasterData.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
-            Link link = await db.LinkSet.FindAsync(id);
-            db.LinkSet.Remove(link);
+            Link link = await db.Links.FindAsync(id);
+            db.Links.Remove(link);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

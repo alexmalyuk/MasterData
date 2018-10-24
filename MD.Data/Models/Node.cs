@@ -29,7 +29,7 @@ namespace MD.Data.Models
         public static Node FindByAlias(string Alias)
         {
             MdContext db = new MdContext();
-            return db.NodeSet.Where(a => a.Alias == Alias).FirstOrDefault();
+            return db.Nodes.Where(a => a.Alias == Alias).FirstOrDefault();
         }
     }
 }

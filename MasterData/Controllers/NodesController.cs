@@ -17,7 +17,7 @@ namespace MasterData.Contollers
         // GET: Nodes
         public ActionResult Index()
         {
-            return View(db.NodeSet.ToList());
+            return View(db.Nodes.ToList());
         }
 
         // GET: Nodes/Details/5
@@ -27,7 +27,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Node node = db.NodeSet.Find(id);
+            Node node = db.Nodes.Find(id);
             if (node == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace MasterData.Contollers
             if (ModelState.IsValid)
             {
                 //node.Id = Guid.NewGuid();
-                db.NodeSet.Add(node);
+                db.Nodes.Add(node);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Node node = db.NodeSet.Find(id);
+            Node node = db.Nodes.Find(id);
             if (node == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Node node = db.NodeSet.Find(id);
+            Node node = db.Nodes.Find(id);
             if (node == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace MasterData.Contollers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Node node = db.NodeSet.Find(id);
-            db.NodeSet.Remove(node);
+            Node node = db.Nodes.Find(id);
+            db.Nodes.Remove(node);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

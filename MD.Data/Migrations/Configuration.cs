@@ -10,7 +10,6 @@ namespace MD.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MD.Data.Models.MdContext";
         }
 
         protected override void Seed(MD.Data.Models.MdContext context)
