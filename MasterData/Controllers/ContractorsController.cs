@@ -44,7 +44,7 @@ namespace MasterData.Contollers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO")] Contractor contractor)
+        public ActionResult Create([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO, VATCertificateNumber")] Contractor contractor)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace MasterData.Contollers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO")] Contractor contractor)
+        public ActionResult Edit([Bind(Include = "Id, Name, FullName, LegalAddress, INN, OKPO, VATCertificateNumber")] Contractor contractor)
         {
             if (ModelState.IsValid)
             {

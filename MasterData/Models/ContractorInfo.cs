@@ -19,6 +19,8 @@ namespace MasterData.Models
 
         public string OKPO { get; set; }
 
+        public string VATCertificateNumber { get; set; }
+
         public string LegalAddress { get; set; }
 
         public override string ToString()
@@ -37,7 +39,7 @@ namespace MasterData.Models
 
             using(MdContext db = new MdContext())
             {
-                Node node = Node.FindByAlias(this.NodeAlias);
+                Node node = Node.FindByAlias(this.NodeAlias, db);
                 if (node == null)
                     return ;
 
@@ -48,11 +50,17 @@ namespace MasterData.Models
                     contractor = new Contractor();
                     db.Contractors.Add(contractor);
                 }
+                else
+                {
+                    //db.Entry(contractor).State = EntityState.Modified;
+                    db.Contractors.Attach(contractor);
+                }
                 contractor.FullName = this.FullName;
                 contractor.INN = this.INN;
                 contractor.LegalAddress = this.LegalAddress;
                 contractor.Name = this.Name;
                 contractor.OKPO = this.OKPO;
+                contractor.VATCertificateNumber = this.VATCertificateNumber;
 
                 db.SaveChanges();
 

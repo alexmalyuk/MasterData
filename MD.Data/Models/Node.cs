@@ -31,5 +31,9 @@ namespace MD.Data.Models
             MdContext db = new MdContext();
             return db.Nodes.Where(a => a.Alias == Alias).FirstOrDefault();
         }
+        public static Node FindByAlias(string Alias, MdContext db)
+        {
+            return db.Nodes.Where(a => a.Alias == Alias).FirstOrDefault();
+        }
     }
 }

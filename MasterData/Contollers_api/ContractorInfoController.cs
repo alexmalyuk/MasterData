@@ -44,8 +44,7 @@ namespace MasterData.Contollers_api
             }
             catch (Exception ex)
             {
-                //Log.For(this).Error("POST: api/ContractorInfo/"+NodeAlias, ex);
-                throw ex;
+                Log.For(this).Error("POST: api/ContractorInfo/" + NodeAlias, ex);
             }
 
             return true;
