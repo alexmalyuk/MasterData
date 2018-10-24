@@ -46,7 +46,7 @@ namespace MasterData.Models
             {
                 contractor = new Contractor();
                 //contractor.Id = Guid.NewGuid();
-                db.ContractorSet.Add(contractor);
+                db.Contractors.Add(contractor);
             }
             else
             {
@@ -84,7 +84,7 @@ namespace MasterData.Models
                 return null;
 
             var q = db.LinkSet.Where(a => a.NativeId == NativeId && a.NodeId == node.Id).Join(
-                db.ContractorSet,
+                db.Contractors,
                 l => l.Id,
                 c => c.Id,
                 (l, c) => new ContractorInfo

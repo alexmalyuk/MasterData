@@ -15,7 +15,7 @@ namespace MasterData.Contollers
         // GET: Contractors
         public ActionResult Index()
         {
-            return View(db.ContractorSet.OrderBy(e=>e.Name).ToList());
+            return View(db.Contractors.OrderBy(e=>e.Name).ToList());
         }
 
         // GET: Contractors/Details/5
@@ -25,7 +25,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contractor contractor = db.ContractorSet.Find(id);
+            Contractor contractor = db.Contractors.Find(id);
             if (contractor == null)
             {
                 return HttpNotFound();
@@ -49,7 +49,7 @@ namespace MasterData.Contollers
             if (ModelState.IsValid)
             {
                 //contractor.Id = Guid.NewGuid();
-                db.ContractorSet.Add(contractor);
+                db.Contractors.Add(contractor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contractor contractor = db.ContractorSet.Find(id);
+            Contractor contractor = db.Contractors.Find(id);
             if (contractor == null)
             {
                 return HttpNotFound();
@@ -95,7 +95,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contractor contractor = db.ContractorSet.Find(id);
+            Contractor contractor = db.Contractors.Find(id);
             if (contractor == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace MasterData.Contollers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Contractor contractor = db.ContractorSet.Find(id);
-            db.ContractorSet.Remove(contractor);
+            Contractor contractor = db.Contractors.Find(id);
+            db.Contractors.Remove(contractor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

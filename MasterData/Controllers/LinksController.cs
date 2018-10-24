@@ -40,7 +40,7 @@ namespace MasterData.Controllers
         // GET: Links/Create
         public ActionResult Create()
         {
-            ViewBag.ContractorId = new SelectList(db.ContractorSet.OrderBy(c => c.Name), "Id", "Name");
+            ViewBag.ContractorId = new SelectList(db.Contractors.OrderBy(c => c.Name), "Id", "Name");
             ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name");
             return View();
         }
@@ -63,7 +63,7 @@ namespace MasterData.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ContractorId = new SelectList(db.ContractorSet, "Id", "Name", link.ContractorId);
+            ViewBag.ContractorId = new SelectList(db.Contractors, "Id", "Name", link.ContractorId);
             ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
             return View(link);
         }
@@ -80,7 +80,7 @@ namespace MasterData.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ContractorId = new SelectList(db.ContractorSet.OrderBy(c => c.Name), "Id", "Name", link.ContractorId);
+            ViewBag.ContractorId = new SelectList(db.Contractors.OrderBy(c => c.Name), "Id", "Name", link.ContractorId);
             ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
             return View(link);
         }
@@ -99,7 +99,7 @@ namespace MasterData.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.ContractorId = new SelectList(db.ContractorSet, "Id", "Name", link.ContractorId);
+            ViewBag.ContractorId = new SelectList(db.Contractors, "Id", "Name", link.ContractorId);
             ViewBag.NodeId = new SelectList(db.NodeSet, "Id", "Name", link.NodeId);
             return View(link);
         }

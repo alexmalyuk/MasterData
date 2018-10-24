@@ -38,7 +38,7 @@ namespace MD.Data.Models
         public static Contractor FindByINN(string INN)
         {
             MdContext db = new MdContext();
-            return db.ContractorSet.Where(a => a.INN == INN).FirstOrDefault();
+            return db.Contractors.Where(a => a.INN == INN).FirstOrDefault();
         }
     }
 }

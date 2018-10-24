@@ -18,7 +18,7 @@ namespace MasterData.Contollers
         // GET: Contracts
         public ActionResult Index()
         {
-            return View(db.ContractSet.ToList());
+            return View(db.Contracts.ToList());
         }
 
         // GET: Contracts/Details/5
@@ -28,7 +28,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contract contract = db.ContractSet.Find(id);
+            Contract contract = db.Contracts.Find(id);
             if (contract == null)
             {
                 return HttpNotFound();
@@ -52,7 +52,7 @@ namespace MasterData.Contollers
             if (ModelState.IsValid)
             {
                 //contract.Id = Guid.NewGuid();
-                db.ContractSet.Add(contract);
+                db.Contracts.Add(contract);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,7 +67,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contract contract = db.ContractSet.Find(id);
+            Contract contract = db.Contracts.Find(id);
             if (contract == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace MasterData.Contollers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contract contract = db.ContractSet.Find(id);
+            Contract contract = db.Contracts.Find(id);
             if (contract == null)
             {
                 return HttpNotFound();
@@ -111,8 +111,8 @@ namespace MasterData.Contollers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Contract contract = db.ContractSet.Find(id);
-            db.ContractSet.Remove(contract);
+            Contract contract = db.Contracts.Find(id);
+            db.Contracts.Remove(contract);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
